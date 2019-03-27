@@ -9,25 +9,24 @@
 import numpy as np
 import random
 
-d = 0.1          #шаг численнного интегрирования
-s1 = 0           #интеграл первого полинома
-s2 = 0           #интеграл второго полинома
-
 def integral(y1, y2): #функция расчёта интегралов
     for i in range(a, b):
+        step = 0.1
         func1 = random.uniform(0, 150)
         func2 = random.uniform(0, 150)
-        s1 = s1 + d * y1*y2
-        i = i + d
+        s1 = s1 + d*y1*y2
+        s2 = s2 + d*y1*y1
+        i = i + step
         if y1 == y2:
-            return(s1)
-        else:
             return(s2)
+        else:
+            s1
 
 a = int(input('введите левый предел '))
 b = int(input('введите правый предел '))
 D = 1/(b-a)
-corr = D*integral(func1, func2) / (abs(D)*(pow(integral(func1, func1)*integral(func2, func2)), 0.5))
+corr = D*integral(1, 2) / (abs(D)*(pow(integral(1, 1)*integral(2, 2)), 0.5))
+print(corr)
 
 
 
